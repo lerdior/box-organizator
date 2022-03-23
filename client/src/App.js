@@ -7,6 +7,7 @@ import { PlusIcon } from "@heroicons/react/solid";
 
 function App() {
   const [boxes, setBoxes] = useState([]);
+  const [boxFilter, setBoxFilter] = useState("");
 
   const [isEditing, setIsEditing] = useState(false);
   const [isAddingBox, setIsAddingBox] = useState(false);
@@ -84,6 +85,7 @@ function App() {
 
   const getProps = {
     boxes,
+    boxFilter,
     isEditing,
     editingBox,
     loadingAdd,
@@ -92,6 +94,7 @@ function App() {
 
   const setProps = {
     setBoxes,
+    setBoxFilter,
     setIsEditing,
     setEditingBox,
     setIsAddingBox,
