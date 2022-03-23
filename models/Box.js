@@ -1,18 +1,25 @@
 const mongoose = require("mongoose");
 
-const UserSchema = mongoose.Schema({
+const Box = mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  email: {
+  description: {
     type: String,
-    unique: true,
+  },
+  theme: {
+    type: String,
+  },
+  content: {
+    type: String,
     required: true,
   },
-  password: {
+  dimensions: {
     type: String,
-    required: true,
+  },
+  location: {
+    type: String,
   },
   date: {
     type: Date,
@@ -20,4 +27,4 @@ const UserSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("box", Box);

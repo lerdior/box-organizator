@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#363636] text-white;
+  }
+}
+
+@layer components {
+  input {
+    @apply h-12 rounded p-2 bg-transparent border-2 border-solid border-white outline-none focus:outline-none; 
+  }
+}
