@@ -1,5 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { BoxesContext } from "../Context";
+import {
+  uniqueNamesGenerator,
+  adjectives,
+  animals,
+} from "unique-names-generator";
 
 function EditBox({
   _id,
@@ -21,7 +26,13 @@ function EditBox({
     error,
   } = useContext(BoxesContext);
 
-  const [inputName, setInputName] = useState("");
+  const getRandomName = () =>
+    uniqueNamesGenerator({
+      dictionaries: [adjectives, animals],
+      length: 2,
+    });
+
+  const [inputName, setInputName] = useState(newBox ? getRandomName() : "");
   const [inputDescription, setInputDescription] = useState("");
   const [inputTheme, setInputTheme] = useState("");
   const [inputContent, setInputContent] = useState("");
